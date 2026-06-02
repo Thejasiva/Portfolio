@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thejeshvini Sivakumar - Full Stack Developer | Python • Django • React</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #050d1f;
+  --secondary: #0f1929;
+  --tertiary: #1a2744;
+  --accent: #ae05fd;
+  --accent-light: #a834d3;
+  --accent-dark: #9304db;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --border: rgba(219, 80, 253, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, #0a1428 100%);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(94, 1, 155, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Code background */
+.code-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: rgba(140, 16, 185, 0.04);
+  line-height: 1.5;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 20px;
+  opacity: 0.5;
+}
+
+/* Custom cursor */
+.cursor {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.6;
+  box-shadow: 0 0 15px rgba(143, 16, 185, 0.4);
+  transform: translate(-50%, -50%);
+  display: none;
+  transition: all 0.1s ease;
+}
+
+.cursor.active {
+  display: block;
+}
+
+.cursor.clicked {
+  opacity: 1;
+  box-shadow: 0 0 25px rgba(137, 16, 185, 0.6);
+  transform: scale(1.2) translate(-50%, -50%);
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 32px 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(5, 13, 31, 0.7);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+  font-family: 'Courier New', monospace;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 48px;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--text-tertiary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  letter-spacing: 0.5px;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+/* Container */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 900px;
+  animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-tag {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(154, 16, 185, 0.1);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+  animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+}
+
+.hero h1 {
+  font-size: 88px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+  letter-spacing: -2px;
+}
+
+.hero p {
+  font-size: 22px;
+  color: var(--text-secondary);
+  margin-bottom: 48px;
+  line-height: 1.6;
+  font-weight: 300;
+  animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
+}
+
+.cta-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.7s both;
+}
+
+.btn {
+  padding: 16px 40px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--accent-light);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(134, 16, 185, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.btn-secondary:hover {
+  background: var(--accent);
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* Section */
+section {
+  padding: 140px 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 100px;
+  animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+.section-tag {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: block;
+  font-family: 'Courier New', monospace;
+}
+
+.section-title {
+  font-size: 60px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.section-desc {
+  font-size: 18px;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+/* Expertise Grid */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 32px;
+  margin-top: 80px;
+}
+
+.expertise-card {
+  background: linear-gradient(135deg, rgba(15, 25, 41, 0.6), rgba(26, 39, 68, 0.4));
+  border: 1px solid var(--border);
+  padding: 48px;
+  border-radius: 16px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  animation: scaleInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.expertise-card:nth-child(1) { animation-delay: 0.2s; }
+.expertise-card:nth-child(2) { animation-delay: 0.3s; }
+.expertise-card:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes scaleInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.expertise-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(126, 16, 185, 0.1), transparent);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.expertise-card:hover::before {
+  opacity: 1;
+  top: -25%;
+  left: -25%;
+}
+
+.expertise-card:hover {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, rgba(15, 25, 41, 0.8), rgba(26, 39, 68, 0.6));
+  transform: translateY(-15px);
+  box-shadow: 0 30px 60px rgba(16, 185, 129, 0.15);
+}
+
+.expertise-card h3 {
+  font-size: 24px;
+  color: var(--accent);
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.expertise-card p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 40px;
+  margin-top: 80px;
+}
+
+.project-card {
+  background: linear-gradient(135deg, rgba(15, 25, 41, 0.5), rgba(26, 39, 68, 0.3));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: scaleInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.2s; }
+.project-card:nth-child(2) { animation-delay: 0.3s; }
+.project-card:nth-child(3) { animation-delay: 0.4s; }
+
+.project-header {
+  height: 240px;
+  background: linear-gradient(135deg, rgba(129, 16, 185, 0.08) 0%, rgba(134, 16, 185, 0.02) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(157, 16, 185, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.project-card:hover .project-header::before {
+  left: 100%;
+}
+
+.project-content {
+  padding: 40px;
+}
+
+.project-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.project-tag {
+  font-size: 11px;
+  padding: 8px 14px;
+  background: rgba(140, 16, 185, 0.15);
+  color: var(--accent);
+  border-radius: 6px;
+  border: 1px solid rgba(148, 16, 185, 0.3);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.project-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.project-link {
+  font-size: 12px;
+  padding: 10px 18px;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.project-link:hover {
+  background: var(--accent);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-20px);
+  background: linear-gradient(135deg, rgba(15, 25, 41, 0.8), rgba(26, 39, 68, 0.5));
+  box-shadow: 0 40px 80px rgba(151, 16, 185, 0.2);
+}
+
+/* Experience */
+.experience-list {
+  max-width: 900px;
+  margin: 80px auto 0;
+}
+
+.exp-item {
+  padding: 48px;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, rgba(15, 25, 41, 0.6), rgba(26, 39, 68, 0.4));
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.exp-item:nth-child(1) { animation-delay: 0.2s; }
+.exp-item:nth-child(2) { animation-delay: 0.3s; }
+.exp-item:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.exp-item:hover {
+  background: linear-gradient(135deg, rgba(15, 25, 41, 0.8), rgba(26, 39, 68, 0.6));
+  transform: translateX(15px);
+  box-shadow: 0 20px 50px rgba(171, 16, 185, 0.1);
+}
+
+.exp-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.exp-company {
+  font-size: 16px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.exp-period {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.exp-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.exp-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  font-size: 11px;
+  padding: 6px 12px;
+  background: rgba(134, 16, 185, 0.15);
+  color: var(--accent);
+  border-radius: 20px;
+  border: 1px solid rgba(143, 16, 185, 0.3);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Contact Section */
+.contact-wrapper {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-desc {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 60px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.email-box {
+  background: linear-gradient(135deg, rgba(148, 16, 185, 0.08) 0%, rgba(126, 16, 185, 0.02) 100%);
+  border: 2px solid var(--accent);
+  padding: 40px;
+  border-radius: 16px;
+  margin-bottom: 60px;
+  animation: scaleInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+.email-label {
+  display: block;
+  color: var(--text-tertiary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  font-family: 'Courier New', monospace;
+}
+
+.email-address {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--accent);
+  word-break: break-all;
+  letter-spacing: -0.5px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+}
+
+.contact-link {
+  padding: 14px 32px;
+  background: rgba(123, 16, 185, 0.1);
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  z-index: -1;
+  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-link:hover::before {
+  left: 0;
+}
+
+.contact-link:hover {
+  color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(120, 16, 185, 0.3);
+}
+
+/* Footer */
+footer {
+  padding: 60px 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--text-tertiary);
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    padding: 20px 32px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .nav-menu {
+    gap: 24px;
+  }
+
+  .container {
+    padding: 0 32px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  .expertise-card {
+    padding: 32px;
+  }
+
+  .project-content {
+    padding: 24px;
+  }
+
+  .exp-item {
+    padding: 32px;
+  }
+
+  .email-address {
+    font-size: 22px;
+  }
+
+  .cta-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="code-bg">const thejeshvini = {
+  name: 'Thejeshvini Sivakumar',
+  role: 'Full Stack Developer',
+  skills: ['Python', 'Django', 'React', 'JavaScript', 'SQL', 'HTML5', 'CSS3'],
+  expertise: ['Backend Development', 'Frontend Development', 'Full Stack Solutions'],
+  projects: [
+    { name: 'Django Auth System', tech: ['Python', 'Django', 'SQLite'] },
+    { name: 'Job Tracker', tech: ['React', 'JavaScript', 'State Management'] },
+    { name: 'E-Commerce App', tech: ['React', 'JavaScript', 'Vercel'] }
+  ],
+  email: 'thejasivakumar1008@gmail.com',
+  phone: '+91 8870888429',
+  links: {
+    github: 'github.com/Thejasiva',
+    linkedin: 'linkedin.com/in/thejeshvini-sivakumar-905930232'
+  },
+  mission: 'Building secure, responsive web applications'
+};
+
+function buildPortfolio() {
+  return thejeshvini.projects.map(project => createWebApp(project));
+}
+
+class Authentication {
+  constructor() { this.secure = true; }
+  login() { return { authenticated: true, user: thejeshvini }; }
+}
+
+const portfolio = new buildPortfolio();
+</div>
+
+<div class="cursor"></div>
+
+<nav>
+  <div class="logo">Thejeshvini Sivakumar</div>
+  <ul class="nav-menu">
+    <li><a href="#expertise" class="nav-link">Expertise</a></li>
+    <li><a href="#work" class="nav-link">Work</a></li>
+    <li><a href="#experience" class="nav-link">Experience</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">FULL STACK WEB DEVELOPER</div>
+      <h1>Curious Mind. Creative Builder. Continuous Learner.</h1>
+      <p>I believe the best way to learn is by building. From full-stack web applications and analytics dashboards to ATS-based tools and interactive user experiences, I enjoy transforming ideas into real products while continuously expanding my skills as a developer.</p>
+      <div class="cta-group">
+        <a href="#work" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="expertise">
+    <div class="section-header">
+      <span class="section-tag">expertise</span>
+      <h2 class="section-title">My Expertise</h2>
+      <p class="section-desc">Technologies and specializations I excel at</p>
+    </div>
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <h3>Web Application Development</h3>
+        <p>Designing and developing modern web applications with a focus on usability, performance, and scalability. Building responsive interfaces, dynamic features, and seamless user experiences.</p>
+      </div>
+      <div class="expertise-card">
+        <h3>Backend Development</h3>
+        <p>Building secure, scalable applications with Python and Django. Expertise in authentication systems, session handling, form validation, CSRF protection, and database design with SQLite.</p>
+      </div>
+      <div class="expertise-card">
+        <h3>Frontend Development</h3>
+        <p>Creating responsive, interactive user interfaces with React and JavaScript. Component-based architecture, state management, performance optimization, and responsive design.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="section-header">
+      <span class="section-tag">featured work</span>
+      <h2 class="section-title">My Work</h2>
+      <p class="section-desc">Recent projects showcasing full-stack capabilities</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-header">Django Authentication System</div>
+        <div class="project-content">
+          <h3 class="project-title">Django Authentication System</h3>
+          <div class="project-meta">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Django</span>
+            <span class="project-tag">SQLite</span>
+          </div>
+          <p class="project-desc">A comprehensive authentication system with registration, login, password reset, and profile management. Implements CSRF protection, session handling, and server-side validation for secure data processing.</p>
+          <div class="project-links">
+            <a href="https://github.com/Thejasiva/django-login-systems" class="project-link" target="_blank">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">Job Application Tracker</div>
+        <div class="project-content">
+          <h3 class="project-title">Job Application Tracker</h3>
+          <div class="project-meta">
+            <span class="project-tag">React</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Crud</span>
+          </div>
+          <p class="project-desc">A state-driven web application for managing job applications across multiple workflow stages. Features search, filtering, status tracking with dynamic UI updates for improved productivity.</p>
+          <div class="project-links">
+            <a href="https://github.com/Thejasiva/job-tracker" class="project-link" target="_blank">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">E-Commerce Web Application</div>
+        <div class="project-content">
+          <h3 class="project-title">E-Commerce Web Application</h3>
+          <div class="project-meta">
+            <span class="project-tag">React</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Vercel</span>
+          </div>
+          <p class="project-desc">Fully responsive e-commerce interface with product listing, search, and cart functionality. Deployed on Vercel with optimized performance and scalable component architecture.</p>
+          <div class="project-links">
+            <a href="https://react-ecommerce-h9ovtr6lv-thejeshvini-sivakumars-projects.vercel.app/" class="project-link" target="_blank">Live ↗</a>
+            <a href="https://github.com/Thejasiva/react-ecommerce-app" class="project-link" target="_blank">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">Resume Analyzer</div>
+        <div class="project-content">
+          <h3 class="project-title">Resume Analyzer</h3>
+          <div class="project-meta">
+            <span class="project-tag">HTML5</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Css3</span>
+            <span class="project-tag">PDF.JS</span>
+          </div>
+          <p class="project-desc">An interactive Resume Analyzer that extracts text from PDF resumes, evaluates ATS compatibility, identifies missing keywords, and provides actionable resume improvement suggestions.</p>
+          <div class="project-links">
+            <a href="https://github.com/Thejasiva/resume-analyzer" class="project-link" target="_blank">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="project-card">
+        <div class="project-header">AI Resume Analyzer</div>
+        <div class="project-content">
+          <h3 class="project-title">AI Resume Analyzer</h3>
+          <div class="project-meta">
+            <span class="project-tag">Html</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Css</span>
+            <span class="project-tag">PDF.js</span>
+          </div>
+          <p class="project-desc">Analyze resumes against job descriptions, calculate ATS scores, identify missing skills, and generate actionable recommendations.</p>
+          <div class="project-links">
+            <a href=" https://thejasiva.github.io/ai-resume-analyzer/" class="project-link" target="_blank">Live ↗</a>
+            <a href="https://github.com/Thejasiva/ai-resume-analyzer" class="project-link" target="_blank">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-header">
+      <span class="section-tag">experience</span>
+      <h2 class="section-title">Professional Journey</h2>
+      <p class="section-desc">Career milestones and achievements</p>
+    </div>
+    <div class="experience-list">
+      <div class="exp-item">
+        <div class="exp-title">Coding Trainer</div>
+        <div class="exp-company">Wizklub Pvt Ltd • Bangalore, India</div>
+        <div class="exp-period">February 2024 – July 2024</div>
+        <p class="exp-desc">Delivered structured training in Python, HTML, CSS, and JavaScript to 95+ learners using project-based learning methodology. Designed a comprehensive 12-week Python curriculum achieving 100% completion rate. Mentored students in debugging, problem-solving, and building real-world web and IoT applications using Arduino and ESP32.</p>
+        <div class="exp-skills">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Teaching</span>
+          <span class="skill-tag">Web Dev</span>
+          <span class="skill-tag">IoT</span>
+          <span class="skill-tag">Leadership</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-title">MCA Student</div>
+        <div class="exp-company">SRM Institute of Science and Technology • Chennai</div>
+        <div class="exp-period">2025 – 2026</div>
+        <p class="exp-desc">Pursuing Master's degree in Computer Applications with focus on advanced web technologies, database design, and full-stack development patterns. Engaging with cutting-edge frameworks and architectural patterns.</p>
+        <div class="exp-skills">
+          <span class="skill-tag">Algorithms</span>
+          <span class="skill-tag">Database Design</span>
+          <span class="skill-tag">Web Development</span>
+          <span class="skill-tag">Software Architecture</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-title">BCA Graduate</div>
+        <div class="exp-company">Immaculate College for Women • Thiruvalluvar University</div>
+        <div class="exp-period">2020 – 2023</div>
+        <p class="exp-desc">Completed Bachelor's degree in Computer Applications with focus on software development. Secured 1st place at college conference for "Virtual Mentorship for MEDICO" project. Built strong foundation in programming, databases, and web technologies.</p>
+        <div class="exp-skills">
+          <span class="skill-tag">OOP</span>
+          <span class="skill-tag">Database Management</span>
+          <span class="skill-tag">Web Development</span>
+          <span class="skill-tag">Problem Solving</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-header">
+      <span class="section-tag">contact</span>
+      <h2 class="section-title">Let's Work Together</h2>
+      <p class="section-desc">Open to discussing projects, opportunities, and collaborations</p>
+    </div>
+    <div class="contact-wrapper">
+      <p class="contact-desc">I'm always interested in hearing about new projects, creative ideas, and opportunities to collaborate on exciting web development initiatives. Feel free to reach out and let's create something amazing.</p>
+      
+      <div class="email-box">
+        <span class="email-label">Get In Touch</span>
+        <a href="mailto:thejasivakumar1008@gmail.com" style="text-decoration: none; color: inherit;">
+          <div class="email-address">thejasivakumar1008@gmail.com</div>
+        </a>
+      </div>
+
+      <div class="contact-links">
+        <a href="mailto:thejasivakumar1008@gmail.com" class="contact-link">Email</a>
+        <a href="https://github.com/Thejasiva" target="_blank" class="contact-link">GitHub</a>
+        <a href="https://linkedin.com/in/thejeshvini-sivakumar-905930232" target="_blank" class="contact-link">LinkedIn</a>
+        <a href="tel:+918870888429" class="contact-link">Call</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p>© 2024 Thejeshvini Sivakumar. Crafted with passion and precision. All rights reserved.</p>
+</footer>
+
+<script>
+  const cursor = document.querySelector('.cursor');
+  let mouseX = 0;
+  let mouseY = 0;
+  let isActive = false;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+  });
+
+  document.addEventListener('mouseenter', () => {
+    cursor.classList.add('active');
+    isActive = true;
+  });
+
+  document.addEventListener('mouseleave', () => {
+    cursor.classList.remove('active');
+    isActive = false;
+  });
+
+  document.addEventListener('mousedown', () => {
+    cursor.classList.add('clicked');
+  });
+
+  document.addEventListener('mouseup', () => {
+    cursor.classList.remove('clicked');
+  });
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Add scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.expertise-card, .project-card, .exp-item').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
