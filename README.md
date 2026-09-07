@@ -1,118 +1,242 @@
-👩‍💻 Thejeshvini Sivakumar - Portfolio Website
+# 👩‍💻 Thejeshvini Sivakumar — Developer Portfolio
 
-Welcome to my personal portfolio website! This portfolio showcases my skills, projects, experience, and journey as a Full Stack Developer passionate about building modern web applications and solving real-world problems through technology.
+<p align="center">
+  <a href="https://thejasiva.github.io/Portfolio/">
+    <img src="https://img.shields.io/badge/🌐_Live_Portfolio-Visit_Website-000000?style=for-the-badge" alt="Live Portfolio"/>
+  </a>
+  <a href="https://github.com/Thejasiva">
+    <img src="https://img.shields.io/badge/GitHub-Thejasiva-181717?style=for-the-badge&logo=github" alt="GitHub"/>
+  </a>
+  <a href="https://www.linkedin.com/in/thejeshvini-sivakumar-905930232/">
+    <img src="https://img.shields.io/badge/LinkedIn-Thejeshvini_Sivakumar-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn"/>
+  </a>
+</p>
 
-🚀 About Me
+---
 
-I'm Thejeshvini Sivakumar, an MCA student and aspiring Full Stack Developer with experience in Python, Django, React, JavaScript, and modern web technologies.
+## 🚀 About the Portfolio
 
-I enjoy building scalable applications, creating intuitive user experiences, and continuously learning new technologies. My goal is to develop impactful software solutions that solve real-world challenges.
+This repository contains my personal developer portfolio, created to showcase my **technical skills, projects, professional experience, education, and journey in software development**.
 
-🛠️ Technologies Used
-Frontend
-HTML5
-CSS3
-JavaScript (ES6+)
-React.js
-Backend
-Python
-Django
-Database
-SQLite
-Tools & Platforms
-Git
-GitHub
-Vercel
-GitHub Pages
-✨ Features
-Responsive modern UI
-Smooth scrolling navigation
-Interactive animations
-Project showcase section
-Professional experience timeline
-Contact section with social links
-Mobile-friendly design
-GitHub project integration
-📂 Featured Projects
-🔐 Django Authentication System
+I am an **MCA student and aspiring Full Stack Developer** with hands-on experience building web applications using **Python, Django, React, JavaScript, HTML, CSS, and SQL-based technologies**.
 
-Secure authentication platform featuring:
+The portfolio serves as a central place to explore my work, understand my technical interests, and connect with me professionally.
 
-User Registration
-Login & Logout
-Password Reset
-Session Management
-CSRF Protection
-Form Validation
-📋 Job Application Tracker
+---
 
-React-based productivity application featuring:
+## 👋 About Me
 
-CRUD Operations
-Job Status Tracking
-Search & Filtering
-Dynamic State Management
-🛒 E-Commerce Web Application
+I'm **Thejeshvini Sivakumar**, an MCA student passionate about building practical software solutions and continuously expanding my skills across full-stack development and AI-powered applications.
 
-Modern e-commerce frontend featuring:
+### 🎯 Current Focus
 
-Product Listings
-Search Functionality
-Shopping Cart
-Responsive Design
-Vercel Deployment
-📄 Resume Analyzer
+* Full Stack Web Development
+* Python & Django
+* React.js & JavaScript
+* REST API Development
+* Database Design
+* AI & NLP Applications
+* Software Engineering
+* Building real-world projects
 
-ATS-focused resume evaluation tool featuring:
+I enjoy turning ideas into functional applications and learning by building.
 
-PDF Resume Parsing
-Keyword Analysis
-ATS Compatibility Scoring
-Resume Improvement Suggestions
-🤖 AI Resume Analyzer
+---
 
-AI-powered resume optimization platform featuring:
+## 🛠️ Tech Stack
 
-Resume vs Job Description Analysis
-ATS Score Calculation
-Missing Skill Detection
-Personalized Recommendations
-💼 Experience
-Coding Trainer | Wizklub Pvt Ltd
+### 💻 Programming & Web
 
-Feb 2024 – Jul 2024
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white"/>
+</p>
 
-Trained 95+ students in Python, HTML, CSS, and JavaScript
-Designed and delivered project-based learning programs
-Mentored learners in web development and IoT projects
-Developed a structured Python curriculum with high completion rates
-MCA Student | SRM Institute of Science and Technology
+### ⚛️ Frontend
 
-2025 – 2026
+<p>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white"/>
+</p>
 
-Focused on:
+### 🐍 Backend
 
-Full Stack Development
-Database Systems
-Software Architecture
-Advanced Web Technologies
-🎓 Education
-Master of Computer Applications (MCA)
+<p>
+  <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white"/>
+  <img src="https://img.shields.io/badge/REST_APIs-02569B?style=flat-square"/>
+</p>
 
-SRM Institute of Science and Technology
+### 🗄️ Database & Tools
 
-Bachelor of Computer Applications (BCA)
+<p>
+  <img src="https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/>
+  <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"/>
+</p>
 
-Immaculate College for Women
+---
+
+## 🌟 Featured Projects
+
+### 🤖 AI Resume Analyzer & Intelligent Job Matching System
+
+An AI-powered web application designed to analyze resumes against job descriptions and provide actionable insights for improving job compatibility.
+
+**Key capabilities:**
+
+* 📄 Resume parsing and text extraction
+* 🔍 Resume–job description analysis
+* 📊 ATS compatibility scoring
+* 🧩 Missing skill detection
+* 🎯 Keyword and skill matching
+* 💡 Resume improvement recommendations
+* 📈 Candidate/job compatibility analysis
+
+**Focus:** AI • NLP • Resume Intelligence • Web Development
+
+---
+
+### 📋 Job Application Tracker
+
+A productivity-focused web application for managing and analyzing job applications throughout the recruitment process.
+
+**Key capabilities:**
+
+* Create, update, and delete applications
+* Track application status
+* Search and filter applications
+* Manage job and company information
+* Dashboard statistics
+* Application analytics
+* Dynamic UI and state management
+
+**Focus:** React • Web Development • CRUD • Data Visualization
+
+---
+
+### 🛒 React E-Commerce Web Application
+
+A responsive e-commerce frontend demonstrating modern React development and client-side application architecture.
+
+**Key capabilities:**
+
+* Product browsing
+* Product search
+* Category filtering
+* Sorting
+* Shopping cart
+* Quantity management
+* Responsive interface
+* Client-side state management
+
+**Focus:** React • JavaScript • API Integration • Responsive Design
+
+---
+
+### 🔐 Django Authentication System
+
+A Django-based authentication application demonstrating secure user management and backend development concepts.
+
+**Key capabilities:**
+
+* User registration
+* Login and logout
+* Password management
+* Session handling
+* Form validation
+* CSRF protection
+* Authentication workflows
+
+**Focus:** Python • Django • Authentication • Backend Development
+
+---
+
+## 💼 Professional Experience
+
+### Coding Trainer — WizKlub Pvt. Ltd.
+
+**Feb 2024 – Jul 2024**
+
+* Trained **95+ students** in Python, HTML, CSS, and JavaScript.
+* Designed and delivered project-based programming sessions.
+* Mentored learners in web development and IoT projects.
+* Developed structured Python learning content.
+* Guided students through hands-on technical projects.
+
+This experience strengthened my ability to explain technical concepts clearly while developing practical software-development skills.
+
+---
+
+## 🎓 Education
+
+### Master of Computer Applications (MCA)
+
+**SRM Institute of Science and Technology**
+
+Currently pursuing MCA with a focus on:
+
+* Full Stack Development
+* Database Systems
+* Software Architecture
+* Advanced Web Technologies
+
+### Bachelor of Computer Applications (BCA)
+
+**Immaculate College for Women**
 Affiliated with Thiruvalluvar University
 
-🏆 First Place – College Conference Project Presentation
-"Virtual Mentorship for MEDICO"
+---
 
-📬 Contact
+## 🏆 Achievement
 
-📧 Email: thejasivakumar1008@gmail.com
+🥇 **First Place — College Conference Project Presentation**
 
-🔗 LinkedIn: linkedin.com/in/thejeshvini-sivakumar-905930232
+**Project:** Virtual Mentorship for MEDICO
 
-💻 GitHub: github.com/Thejasiva
+---
+
+## 🌐 Portfolio
+
+Explore my complete portfolio:
+
+**👉 https://thejasiva.github.io/Portfolio/**
+
+The portfolio includes my:
+
+* Projects
+* Technical skills
+* Experience
+* Education
+* Achievements
+* Professional links
+
+---
+
+## 🤝 Let's Connect
+
+I'm interested in opportunities involving:
+
+* Full Stack Development
+* Python Development
+* Django Development
+* React Development
+* Web Application Development
+* AI/NLP Applications
+* Software Engineering
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/thejeshvini-sivakumar-905930232/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+  <a href="https://github.com/Thejasiva">
+    <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
+</p>
+
+---
+
+<p align="center">
+  <i>Building, learning, and turning ideas into working software.</i> 🚀
+</p>
