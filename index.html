@@ -15,13 +15,13 @@
   --primary: #050d1f;
   --secondary: #0f1929;
   --tertiary: #1a2744;
-  --accent: #ae05fd;
-  --accent-light: #a834d3;
-  --accent-dark: #9304db;
+  --accent: #10b981;
+  --accent-light: #34d399;
+  --accent-dark: #059669;
   --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
   --text-tertiary: #94a3b8;
-  --border: rgba(219, 80, 253, 0.2);
+  --border: rgba(16, 185, 129, 0.2);
 }
 
 html {
@@ -36,7 +36,6 @@ body {
   position: relative;
 }
 
-/* Animated background */
 body::before {
   content: '';
   position: fixed;
@@ -45,7 +44,7 @@ body::before {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(94, 1, 155, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
@@ -57,7 +56,6 @@ body::before {
   50% { opacity: 0.8; }
 }
 
-/* Code background */
 .code-bg {
   position: fixed;
   top: 0;
@@ -66,7 +64,7 @@ body::before {
   height: 100%;
   font-family: 'Courier New', monospace;
   font-size: 12px;
-  color: rgba(140, 16, 185, 0.04);
+  color: rgba(16, 185, 129, 0.04);
   line-height: 1.5;
   overflow: hidden;
   z-index: 0;
@@ -77,7 +75,6 @@ body::before {
   opacity: 0.5;
 }
 
-/* Custom cursor */
 .cursor {
   position: fixed;
   width: 30px;
@@ -87,7 +84,7 @@ body::before {
   pointer-events: none;
   z-index: 9999;
   opacity: 0.6;
-  box-shadow: 0 0 15px rgba(143, 16, 185, 0.4);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
   transform: translate(-50%, -50%);
   display: none;
   transition: all 0.1s ease;
@@ -99,11 +96,10 @@ body::before {
 
 .cursor.clicked {
   opacity: 1;
-  box-shadow: 0 0 25px rgba(137, 16, 185, 0.6);
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.6);
   transform: scale(1.2) translate(-50%, -50%);
 }
 
-/* Navigation */
 nav {
   position: fixed;
   top: 0;
@@ -164,7 +160,6 @@ nav {
   width: 100%;
 }
 
-/* Container */
 .container {
   position: relative;
   z-index: 1;
@@ -173,7 +168,6 @@ nav {
   padding: 0 64px;
 }
 
-/* Hero Section */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -184,9 +178,22 @@ nav {
   position: relative;
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+}
+
 .hero-content {
-  max-width: 900px;
   animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+  max-width: 900px;
 }
 
 @keyframes fadeInUp {
@@ -203,7 +210,7 @@ nav {
 .hero-tag {
   display: inline-block;
   padding: 10px 20px;
-  background: rgba(154, 16, 185, 0.1);
+  background: rgba(16, 185, 129, 0.1);
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--accent);
@@ -266,7 +273,7 @@ nav {
 .btn-primary:hover {
   background: var(--accent-light);
   transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(134, 16, 185, 0.3);
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
 }
 
 .btn-secondary {
@@ -281,7 +288,6 @@ nav {
   transform: translateY(-3px);
 }
 
-/* Section */
 section {
   padding: 140px 0;
   position: relative;
@@ -321,7 +327,6 @@ section {
   font-weight: 300;
 }
 
-/* Expertise Grid */
 .expertise-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -362,7 +367,7 @@ section {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(126, 16, 185, 0.1), transparent);
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.1), transparent);
   opacity: 0;
   transition: all 0.5s ease;
 }
@@ -396,7 +401,6 @@ section {
   z-index: 1;
 }
 
-/* Projects Grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -416,10 +420,11 @@ section {
 .project-card:nth-child(1) { animation-delay: 0.2s; }
 .project-card:nth-child(2) { animation-delay: 0.3s; }
 .project-card:nth-child(3) { animation-delay: 0.4s; }
+.project-card:nth-child(4) { animation-delay: 0.5s; }
 
 .project-header {
   height: 240px;
-  background: linear-gradient(135deg, rgba(129, 16, 185, 0.08) 0%, rgba(134, 16, 185, 0.02) 100%);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.02) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -436,7 +441,7 @@ section {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(157, 16, 185, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.2), transparent);
   transition: left 0.6s ease;
 }
 
@@ -465,10 +470,10 @@ section {
 .project-tag {
   font-size: 11px;
   padding: 8px 14px;
-  background: rgba(140, 16, 185, 0.15);
+  background: rgba(16, 185, 129, 0.15);
   color: var(--accent);
   border-radius: 6px;
-  border: 1px solid rgba(148, 16, 185, 0.3);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -510,10 +515,9 @@ section {
   border-color: var(--accent);
   transform: translateY(-20px);
   background: linear-gradient(135deg, rgba(15, 25, 41, 0.8), rgba(26, 39, 68, 0.5));
-  box-shadow: 0 40px 80px rgba(151, 16, 185, 0.2);
+  box-shadow: 0 40px 80px rgba(16, 185, 129, 0.2);
 }
 
-/* Experience */
 .experience-list {
   max-width: 900px;
   margin: 80px auto 0;
@@ -547,7 +551,7 @@ section {
 .exp-item:hover {
   background: linear-gradient(135deg, rgba(15, 25, 41, 0.8), rgba(26, 39, 68, 0.6));
   transform: translateX(15px);
-  box-shadow: 0 20px 50px rgba(171, 16, 185, 0.1);
+  box-shadow: 0 20px 50px rgba(16, 185, 129, 0.1);
 }
 
 .exp-title {
@@ -588,16 +592,15 @@ section {
 .skill-tag {
   font-size: 11px;
   padding: 6px 12px;
-  background: rgba(134, 16, 185, 0.15);
+  background: rgba(16, 185, 129, 0.15);
   color: var(--accent);
   border-radius: 20px;
-  border: 1px solid rgba(143, 16, 185, 0.3);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
-/* Contact Section */
 .contact-wrapper {
   text-align: center;
   max-width: 700px;
@@ -613,7 +616,7 @@ section {
 }
 
 .email-box {
-  background: linear-gradient(135deg, rgba(148, 16, 185, 0.08) 0%, rgba(126, 16, 185, 0.02) 100%);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.02) 100%);
   border: 2px solid var(--accent);
   padding: 40px;
   border-radius: 16px;
@@ -650,7 +653,7 @@ section {
 
 .contact-link {
   padding: 14px 32px;
-  background: rgba(123, 16, 185, 0.1);
+  background: rgba(16, 185, 129, 0.1);
   border: 2px solid var(--accent);
   color: var(--accent);
   text-decoration: none;
@@ -682,10 +685,9 @@ section {
 .contact-link:hover {
   color: var(--primary);
   transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(120, 16, 185, 0.3);
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
 }
 
-/* Footer */
 footer {
   padding: 60px 0;
   text-align: center;
@@ -696,7 +698,6 @@ footer {
   letter-spacing: 0.5px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   nav {
     padding: 20px 32px;
@@ -768,7 +769,8 @@ footer {
   projects: [
     { name: 'Django Auth System', tech: ['Python', 'Django', 'SQLite'] },
     { name: 'Job Tracker', tech: ['React', 'JavaScript', 'State Management'] },
-    { name: 'E-Commerce App', tech: ['React', 'JavaScript', 'Vercel'] }
+    { name: 'E-Commerce App', tech: ['React', 'JavaScript', 'Vercel'] },
+    { name: 'AI Resume Analyzer', tech: ['Python', 'Django', 'NLP'] }
   ],
   email: 'thejasivakumar1008@gmail.com',
   phone: '+91 8870888429',
@@ -788,13 +790,13 @@ class Authentication {
   login() { return { authenticated: true, user: thejeshvini }; }
 }
 
-const portfolio = new buildPortfolio();
+const portfolio = buildPortfolio();
 </div>
 
 <div class="cursor"></div>
 
 <nav>
-  <div class="logo">Thejeshvini Sivakumar</div>
+  <div class="logo">// Thejeshvini</div>
   <ul class="nav-menu">
     <li><a href="#expertise" class="nav-link">Expertise</a></li>
     <li><a href="#work" class="nav-link">Work</a></li>
@@ -806,9 +808,9 @@ const portfolio = new buildPortfolio();
 <div class="container">
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-tag">FULL STACK WEB DEVELOPER</div>
-      <h1>Curious Mind. Creative Builder. Continuous Learner.</h1>
-      <p>I believe the best way to learn is by building. From full-stack web applications and analytics dashboards to ATS-based tools and interactive user experiences, I enjoy transforming ideas into real products while continuously expanding my skills as a developer.</p>
+      <div class="hero-tag">FULL STACK DEVELOPER</div>
+      <h1>Crafting Digital Experiences With Code</h1>
+      <p>I build secure, responsive web applications using Python, Django, and React. Specialized in authentication systems, full-stack solutions, and scalable architectures.</p>
       <div class="cta-group">
         <a href="#work" class="btn btn-primary">View My Work</a>
         <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -818,15 +820,11 @@ const portfolio = new buildPortfolio();
 
   <section id="expertise">
     <div class="section-header">
-      <span class="section-tag">expertise</span>
+      <span class="section-tag">// expertise</span>
       <h2 class="section-title">My Expertise</h2>
       <p class="section-desc">Technologies and specializations I excel at</p>
     </div>
     <div class="expertise-grid">
-      <div class="expertise-card">
-        <h3>Web Application Development</h3>
-        <p>Designing and developing modern web applications with a focus on usability, performance, and scalability. Building responsive interfaces, dynamic features, and seamless user experiences.</p>
-      </div>
       <div class="expertise-card">
         <h3>Backend Development</h3>
         <p>Building secure, scalable applications with Python and Django. Expertise in authentication systems, session handling, form validation, CSRF protection, and database design with SQLite.</p>
@@ -835,12 +833,16 @@ const portfolio = new buildPortfolio();
         <h3>Frontend Development</h3>
         <p>Creating responsive, interactive user interfaces with React and JavaScript. Component-based architecture, state management, performance optimization, and responsive design.</p>
       </div>
+      <div class="expertise-card">
+        <h3>Full Stack Solutions</h3>
+        <p>End-to-end development from design to deployment. REST APIs, MVC architecture, cloud hosting with Vercel, and seamless frontend-backend integration.</p>
+      </div>
     </div>
   </section>
 
   <section id="work">
     <div class="section-header">
-      <span class="section-tag">featured work</span>
+      <span class="section-tag">// featured work</span>
       <h2 class="section-title">My Work</h2>
       <p class="section-desc">Recent projects showcasing full-stack capabilities</p>
     </div>
@@ -868,7 +870,7 @@ const portfolio = new buildPortfolio();
           <div class="project-meta">
             <span class="project-tag">React</span>
             <span class="project-tag">JavaScript</span>
-            <span class="project-tag">Crud</span>
+            <span class="project-tag">State</span>
           </div>
           <p class="project-desc">A state-driven web application for managing job applications across multiple workflow stages. Features search, filtering, status tracking with dynamic UI updates for improved productivity.</p>
           <div class="project-links">
@@ -895,30 +897,26 @@ const portfolio = new buildPortfolio();
       </div>
 
       <div class="project-card">
-        <div class="project-header">AI-Powered Resume Analyzer and Intelligent Job Matching System</div>
+        <div class="project-header">AI Resume Analyzer</div>
         <div class="project-content">
-          <h3 class="project-title">AI-Powered Resume Analyzer and Intelligent Job Matching System</h3>
+          <h3 class="project-title">AI Resume Analyzer & Job Matching System</h3>
           <div class="project-meta">
             <span class="project-tag">Python</span>
             <span class="project-tag">Django</span>
             <span class="project-tag">NLP</span>
-            <span class="project-tag">SQLite</span>
           </div>
-          <p class="project-desc">A web-based application that analyzes resumes using NLP to generate an ATS readiness score, extracts skills and keywords, and intelligently matches candidates to job opportunities using skill-based and semantic similarity comparison, ranking jobs and highlighting skill gaps.</p>
+          <p class="project-desc">AI-powered Resume Analyzer with Intelligent Job Matching System built with Python, Django and Natural Language Processing. Analyzes resumes and matches them with suitable job opportunities using machine learning.</p>
           <div class="project-links">
-            <a href="https://resumeiq-djou.onrender.com" class="project-link" target="_blank">Live ↗</a>
             <a href="https://github.com/Thejasiva/AI-Resume-Analyzer-Intelligent-Job-Matching-System" class="project-link" target="_blank">GitHub ↗</a>
           </div>
         </div>
       </div>
-
-
     </div>
   </section>
 
   <section id="experience">
     <div class="section-header">
-      <span class="section-tag">experience</span>
+      <span class="section-tag">// experience</span>
       <h2 class="section-title">Professional Journey</h2>
       <p class="section-desc">Career milestones and achievements</p>
     </div>
@@ -944,8 +942,8 @@ const portfolio = new buildPortfolio();
         <p class="exp-desc">Pursuing Master's degree in Computer Applications with focus on advanced web technologies, database design, and full-stack development patterns. Engaging with cutting-edge frameworks and architectural patterns.</p>
         <div class="exp-skills">
           <span class="skill-tag">Algorithms</span>
-          <span class="skill-tag">Database Design</span>
-          <span class="skill-tag">Web Development</span>
+          <span class="skill-tag">Database</span>
+          <span class="skill-tag">Web Dev</span>
           <span class="skill-tag">Software Architecture</span>
         </div>
       </div>
@@ -954,11 +952,11 @@ const portfolio = new buildPortfolio();
         <div class="exp-title">BCA Graduate</div>
         <div class="exp-company">Immaculate College for Women • Thiruvalluvar University</div>
         <div class="exp-period">2020 – 2023</div>
-        <p class="exp-desc">Completed Bachelor's degree in Computer Applications with focus on software development. Secured 1st place at college conference for "Virtual Mentorship for MEDICO" project. Built strong foundation in programming, databases, and web technologies.</p>
+        <p class="exp-desc">Completed Bachelor's degree in Computer Applications with focus on software development. Secured 1st place at college conference for "Virtual Mentorship for MEDICO" project. Developed strong foundation in programming, databases, and web technologies.</p>
         <div class="exp-skills">
           <span class="skill-tag">OOP</span>
-          <span class="skill-tag">Database Management</span>
-          <span class="skill-tag">Web Development</span>
+          <span class="skill-tag">Databases</span>
+          <span class="skill-tag">Web Dev</span>
           <span class="skill-tag">Problem Solving</span>
         </div>
       </div>
@@ -967,9 +965,9 @@ const portfolio = new buildPortfolio();
 
   <section id="contact">
     <div class="section-header">
-      <span class="section-tag">contact</span>
+      <span class="section-tag">// contact</span>
       <h2 class="section-title">Let's Work Together</h2>
-      <p class="section-desc">Open to discussing projects, opportunities, and collaborations</p>
+      <p class="section-desc">Open to discussing projects and opportunities</p>
     </div>
     <div class="contact-wrapper">
       <p class="contact-desc">I'm always interested in hearing about new projects, creative ideas, and opportunities to collaborate on exciting web development initiatives. Feel free to reach out and let's create something amazing.</p>
